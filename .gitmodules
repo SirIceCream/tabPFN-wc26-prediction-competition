@@ -1,0 +1,8 @@
+[submodule "tabpfn-football-predictions"]
+	path = tabpfn-football-predictions
+	url = https://github.com/PriorLabs/tabpfn-football-predictions.git
+
+[submodule "data/raw/international_results"]
+	path = data/raw/international_results
+	url = https://github.com/martj42/international_results.git
+

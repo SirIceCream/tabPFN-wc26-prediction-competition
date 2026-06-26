@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local environment
+.env
+.env.*
+
+# Generated prediction outputs
+predictions_*.csv
+submission_*.csv
+*.log
+
+# Notebook and local analysis clutter
+.ipynb_checkpoints/
+
