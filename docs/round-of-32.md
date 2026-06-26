@@ -69,6 +69,46 @@ Recommended output location:
 outputs/round_of_32_submission.csv
 ```
 
+## Confirmed Fixtures
+
+Known Round of 32 fixtures are stored in:
+
+```text
+data/processed/round_of_32_known_fixtures.csv
+```
+
+Current confirmed rows:
+
+```csv
+match_no,date,time_local,home_team,away_team,venue,city,country,neutral
+73,2026-06-28,12:00,South Africa,Canada,SoFi Stadium,Inglewood,United States,TRUE
+76,2026-06-29,12:00,Brazil,Japan,NRG Stadium,Houston,United States,TRUE
+75,2026-06-29,19:00,Netherlands,Morocco,Estadio BBVA,Guadalupe,Mexico,TRUE
+81,2026-07-01,17:00,United States,Bosnia and Herzegovina,Levi's Stadium,Santa Clara,United States,FALSE
+```
+
+Source trail:
+
+- The Round of 32 bracket confirms Match 73 South Africa vs Canada, Match 75 Netherlands vs Morocco, Match 76 Brazil vs Japan, and Match 81 United States vs Bosnia and Herzegovina.
+- The match schedule gives the exact date, local time, and venue for those match numbers.
+- The schedule references FIFA match reports for those four confirmed matches.
+
+## Generating Known-Fixture Output
+
+Run from the repository root:
+
+```bash
+tabpfn-football-predictions/.venv/bin/python scripts/predict_custom_fixtures.py \
+  data/processed/round_of_32_known_fixtures.csv \
+  outputs/round_of_32_known_fixtures_submission_20260626.csv
+```
+
+Generated upload file:
+
+```text
+outputs/round_of_32_known_fixtures_submission_20260626.csv
+```
+
 ## Validation Checklist
 
 Before upload:
