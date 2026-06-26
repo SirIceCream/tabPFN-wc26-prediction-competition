@@ -34,3 +34,4 @@ python predict.py
 
 See [docs/rules.md](docs/rules.md) and [docs/data.md](docs/data.md) before changing modeling logic.
 
+The first successful baseline run is recorded in [docs/baseline.md](docs/baseline.md).
