@@ -25,7 +25,7 @@ The baseline:
 
 ## Submission Shape
 
-Predictions should preserve the starter repository's output columns unless the official schema requires a change:
+The starter repository's output columns are:
 
 - `date`
 - `home_team`
@@ -36,6 +36,8 @@ Predictions should preserve the starter repository's output columns unless the o
 - `p_away_win`
 
 Probability columns must be numeric, non-negative, and should sum to `1.0` per match after any post-processing.
+
+Official round uploads may omit helper columns. For the Round of 32 upload schema, see [round-of-32.md](round-of-32.md).
 
 ## Modeling Rules
 
