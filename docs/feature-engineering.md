@@ -152,7 +152,7 @@ Inputs:
 outputs/round_of_32_submission.csv
 data/processed/round_of_32_fixtures.csv
 data/processed/round_of_32_team_context.csv
-data/processed/round_of_32_market_odds_template.csv
+data/processed/round_of_32_market_odds.csv
 ```
 
 The team-context file supports:
@@ -173,7 +173,7 @@ tabpfn-football-predictions/.venv/bin/python scripts/adjust_probabilities.py \
   data/processed/round_of_32_fixtures.csv \
   data/processed/round_of_32_team_context.csv \
   outputs/round_of_32_adjusted_submission.csv \
-  --market-odds-csv data/processed/round_of_32_market_odds_template.csv
+  --market-odds-csv data/processed/round_of_32_market_odds.csv
 ```
 
 The adjustment layer currently applies:
@@ -186,3 +186,15 @@ The adjustment layer currently applies:
 - optional market blend
 
 The uncertainty factor is deliberately symmetric. It does not randomly push toward either team; it slightly reduces overconfidence in cross-confederation matchups.
+
+## Current Populated Sources
+
+Group-stage points and goal-difference inputs are populated from the current CBS Sports group standings/results page.
+
+Market odds are populated from the FOX Sports Round of 32 odds page, which cites FanDuel Sportsbook moneylines as of June 27. American odds were converted to decimal odds before saving in:
+
+```text
+data/processed/round_of_32_market_odds.csv
+```
+
+`prior_run_score` is still a hand-built heuristic. It summarizes recent senior men's international tournament strength on a simple scale, using World Cup plus major confederation tournament performance. Treat this as a first-pass feature, not a fully audited ranking.

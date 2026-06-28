@@ -1,33 +1,33 @@
 team,confederation,is_host,group_points,group_goal_diff,prior_run_score,notes
-South Africa,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Canada,CONCACAF,TRUE,,,,TODO: fill group-stage and prior-run context
-Brazil,CONMEBOL,FALSE,,,,TODO: fill group-stage and prior-run context
-Japan,AFC,FALSE,,,,TODO: fill group-stage and prior-run context
-Germany,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Paraguay,CONMEBOL,FALSE,,,,TODO: fill group-stage and prior-run context
-Netherlands,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Morocco,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Ivory Coast,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Norway,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-France,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Sweden,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Mexico,CONCACAF,TRUE,,,,TODO: fill group-stage and prior-run context
-Ecuador,CONMEBOL,FALSE,,,,TODO: fill group-stage and prior-run context
-England,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-DR Congo,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Belgium,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Senegal,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-United States,CONCACAF,TRUE,,,,TODO: fill group-stage and prior-run context
-Bosnia and Herzegovina,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Spain,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Austria,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Portugal,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Croatia,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Switzerland,UEFA,FALSE,,,,TODO: fill group-stage and prior-run context
-Algeria,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Australia,AFC,FALSE,,,,TODO: fill group-stage and prior-run context
-Egypt,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Argentina,CONMEBOL,FALSE,,,,TODO: fill group-stage and prior-run context
-Cape Verde,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
-Colombia,CONMEBOL,FALSE,,,,TODO: fill group-stage and prior-run context
-Ghana,CAF,FALSE,,,,TODO: fill group-stage and prior-run context
+South Africa,CAF,FALSE,4,-1,1,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+Canada,CONCACAF,TRUE,4,5,1,Group stats from CBS/results; prior_run_score heuristic from recent World Cup/Gold Cup runs
+Brazil,CONMEBOL,FALSE,7,6,5,Group stats from CBS; prior_run_score heuristic from recent World Cup/Copa America runs
+Japan,AFC,FALSE,5,4,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/Asian Cup runs
+Germany,UEFA,FALSE,6,6,4,Group stats derived from CBS listed results; prior_run_score heuristic from recent World Cup/Euro runs
+Paraguay,CONMEBOL,FALSE,4,-2,1,Group stats from CBS; prior_run_score heuristic from recent World Cup/Copa America runs
+Netherlands,UEFA,FALSE,7,6,4,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Morocco,CAF,FALSE,7,3,4,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+Ivory Coast,CAF,FALSE,6,2,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+Norway,UEFA,FALSE,6,1,2,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+France,UEFA,FALSE,9,8,5,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Sweden,UEFA,FALSE,4,0,2,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Mexico,CONCACAF,TRUE,9,6,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/Gold Cup runs
+Ecuador,CONMEBOL,FALSE,4,0,2,Group stats from CBS; prior_run_score heuristic from recent World Cup/Copa America runs
+England,UEFA,FALSE,7,4,4,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+DR Congo,CAF,FALSE,4,1,1,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+Belgium,UEFA,FALSE,5,4,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Senegal,CAF,FALSE,3,2,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+United States,CONCACAF,TRUE,6,4,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/Gold Cup runs
+Bosnia and Herzegovina,UEFA,FALSE,4,-1,1,Group stats derived from CBS listed results; prior_run_score heuristic from recent World Cup/Euro runs
+Spain,UEFA,FALSE,7,5,5,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Austria,UEFA,FALSE,4,0,2,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Portugal,UEFA,FALSE,5,5,4,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Croatia,UEFA,FALSE,6,0,5,Group stats derived from CBS listed results; prior_run_score heuristic from recent World Cup/Euro runs
+Switzerland,UEFA,FALSE,7,4,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/Euro runs
+Algeria,CAF,FALSE,4,-2,2,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+Australia,AFC,FALSE,4,0,2,Group stats from CBS; prior_run_score heuristic from recent World Cup/Asian Cup runs
+Egypt,CAF,FALSE,5,2,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
+Argentina,CONMEBOL,FALSE,9,7,5,Group stats from CBS table; prior_run_score heuristic from recent World Cup/Copa America runs
+Cape Verde,CAF,FALSE,3,0,1,Group stats derived from CBS listed results; prior_run_score heuristic from recent World Cup/AFCON runs
+Colombia,CONMEBOL,FALSE,7,3,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/Copa America runs
+Ghana,CAF,FALSE,4,0,3,Group stats from CBS; prior_run_score heuristic from recent World Cup/AFCON runs
