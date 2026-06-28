@@ -165,6 +165,14 @@ The team-context file supports:
 
 The market-odds file supports multiple providers per match and converts decimal odds to normalized implied probabilities before blending.
 
+The Polymarket file stores the first-listed team's matchup/advance price:
+
+```text
+data/processed/round_of_32_polymarket.csv
+```
+
+Polymarket is not treated as a draw-inclusive 1X2 market. The script preserves the current draw probability and blends only the home-vs-away share of the non-draw probability mass.
+
 Example run:
 
 ```bash
@@ -173,7 +181,8 @@ tabpfn-football-predictions/.venv/bin/python scripts/adjust_probabilities.py \
   data/processed/round_of_32_fixtures.csv \
   data/processed/round_of_32_team_context.csv \
   outputs/round_of_32_adjusted_submission.csv \
-  --market-odds-csv data/processed/round_of_32_market_odds.csv
+  --market-odds-csv data/processed/round_of_32_market_odds.csv \
+  --polymarket-csv data/processed/round_of_32_polymarket.csv
 ```
 
 The adjustment layer currently applies:
@@ -184,6 +193,7 @@ The adjustment layer currently applies:
 - explicit host edge for United States, Mexico, and Canada when playing in their own country
 - small cross-confederation uncertainty shrink toward `1/3, 1/3, 1/3`
 - optional market blend
+- optional Polymarket matchup/advance blend
 
 The uncertainty factor is deliberately symmetric. It does not randomly push toward either team; it slightly reduces overconfidence in cross-confederation matchups.
 
@@ -195,6 +205,12 @@ Market odds are populated from the FOX Sports Round of 32 odds page, which cites
 
 ```text
 data/processed/round_of_32_market_odds.csv
+```
+
+Polymarket matchup prices are populated from the structured event metadata on the Polymarket World Cup games page:
+
+```text
+data/processed/round_of_32_polymarket.csv
 ```
 
 `prior_run_score` is still a hand-built heuristic. It summarizes recent senior men's international tournament strength on a simple scale, using World Cup plus major confederation tournament performance. Treat this as a first-pass feature, not a fully audited ranking.

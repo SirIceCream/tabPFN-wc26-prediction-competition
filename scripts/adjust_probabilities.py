@@ -75,12 +75,14 @@ def main() -> None:
     parser.add_argument("team_context_csv", type=Path)
     parser.add_argument("output_csv", type=Path)
     parser.add_argument("--market-odds-csv", type=Path)
+    parser.add_argument("--polymarket-csv", type=Path)
     parser.add_argument("--group-points-weight", type=float, default=0.025)
     parser.add_argument("--group-goal-diff-weight", type=float, default=0.035)
     parser.add_argument("--prior-run-weight", type=float, default=0.020)
     parser.add_argument("--host-weight", type=float, default=0.060)
     parser.add_argument("--cross-confed-uncertainty", type=float, default=0.015)
     parser.add_argument("--market-weight", type=float, default=0.35)
+    parser.add_argument("--polymarket-weight", type=float, default=0.20)
     args = parser.parse_args()
 
     base = pd.read_csv(args.base_probabilities_csv)
@@ -151,6 +153,27 @@ def main() -> None:
                 (1 - w) * df.loc[has_market, "p_away_win"] + w * df.loc[has_market, "market_away"]
             )
             df["adj_market_blend"] = has_market.astype(float) * w
+            normalize(df)
+
+    if args.polymarket_csv:
+        polymarket = pd.read_csv(args.polymarket_csv)
+        if "p_home_advance" not in polymarket.columns:
+            raise SystemExit("Polymarket file must contain p_home_advance")
+        polymarket["p_home_advance"] = pd.to_numeric(polymarket["p_home_advance"], errors="coerce")
+        polymarket = polymarket.dropna(subset=["match_no", "p_home_advance"])
+        polymarket = polymarket[
+            (polymarket["p_home_advance"] >= 0.0) & (polymarket["p_home_advance"] <= 1.0)
+        ][["match_no", "p_home_advance"]]
+        if not polymarket.empty:
+            df = df.merge(polymarket, on="match_no", how="left")
+            has_poly = df["p_home_advance"].notna()
+            non_draw = df.loc[has_poly, "p_home_win"] + df.loc[has_poly, "p_away_win"]
+            current_home_share = df.loc[has_poly, "p_home_win"] / non_draw
+            w = args.polymarket_weight
+            blended_home_share = (1 - w) * current_home_share + w * df.loc[has_poly, "p_home_advance"]
+            df.loc[has_poly, "p_home_win"] = non_draw * blended_home_share
+            df.loc[has_poly, "p_away_win"] = non_draw * (1 - blended_home_share)
+            df["adj_polymarket_blend"] = has_poly.astype(float) * w
             normalize(df)
 
     out = df[OUTPUT_COLS]

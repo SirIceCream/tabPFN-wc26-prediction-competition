@@ -1,0 +1,17 @@
+match_no,date,home_team,away_team,adj_group_points_diff,adj_group_goal_diff_diff,adj_prior_run_diff,adj_host_edge,adj_cross_confed_uncertainty,adj_market_blend,adj_polymarket_blend
+73,2026-06-28,South Africa,Canada,0,-6,0,0.0,0.015,0.35,0.2
+76,2026-06-29,Brazil,Japan,2,2,2,0.0,0.015,0.35,0.2
+74,2026-06-29,Germany,Paraguay,2,8,3,0.0,0.015,0.35,0.2
+75,2026-06-29,Netherlands,Morocco,0,3,0,0.0,0.015,0.35,0.2
+78,2026-06-30,Ivory Coast,Norway,0,1,1,0.0,0.015,0.35,0.2
+77,2026-06-30,France,Sweden,5,8,3,0.0,0.0,0.35,0.2
+79,2026-06-30,Mexico,Ecuador,5,6,1,1.0,0.015,0.35,0.2
+80,2026-07-01,England,DR Congo,3,3,3,0.0,0.015,0.35,0.2
+82,2026-07-01,Belgium,Senegal,2,2,0,0.0,0.015,0.35,0.2
+81,2026-07-01,United States,Bosnia and Herzegovina,2,5,2,1.0,0.015,0.35,0.2
+84,2026-07-02,Spain,Austria,3,5,3,0.0,0.0,0.35,0.2
+83,2026-07-02,Portugal,Croatia,-1,5,-1,0.0,0.0,0.35,0.2
+85,2026-07-02,Switzerland,Algeria,3,6,1,0.0,0.015,0.35,0.2
+88,2026-07-03,Australia,Egypt,-1,-2,-1,0.0,0.015,0.35,0.2
+86,2026-07-03,Argentina,Cape Verde,6,7,4,0.0,0.015,0.35,0.2
+87,2026-07-03,Colombia,Ghana,3,3,0,0.0,0.015,0.35,0.2
