@@ -32,6 +32,6 @@ pip install -r requirements.txt
 python predict.py
 ```
 
-See [docs/rules.md](docs/rules.md), [docs/data.md](docs/data.md), and [docs/round-of-32.md](docs/round-of-32.md) before changing modeling logic.
+See [docs/rules.md](docs/rules.md), [docs/data.md](docs/data.md), [docs/round-of-32.md](docs/round-of-32.md), and [docs/feature-engineering.md](docs/feature-engineering.md) before changing modeling logic.
 
 The first successful baseline run is recorded in [docs/baseline.md](docs/baseline.md).
