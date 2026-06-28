@@ -71,10 +71,10 @@ outputs/round_of_32_submission.csv
 
 ## Confirmed Fixtures
 
-Known Round of 32 fixtures are stored in:
+The full Round of 32 fixture list is stored in:
 
 ```text
-data/processed/round_of_32_known_fixtures.csv
+data/processed/round_of_32_fixtures.csv
 ```
 
 Current confirmed rows:
@@ -83,30 +83,42 @@ Current confirmed rows:
 match_no,date,time_local,home_team,away_team,venue,city,country,neutral
 73,2026-06-28,12:00,South Africa,Canada,SoFi Stadium,Inglewood,United States,TRUE
 76,2026-06-29,12:00,Brazil,Japan,NRG Stadium,Houston,United States,TRUE
+74,2026-06-29,16:30,Germany,Paraguay,Gillette Stadium,Foxborough,United States,TRUE
 75,2026-06-29,19:00,Netherlands,Morocco,Estadio BBVA,Guadalupe,Mexico,TRUE
+78,2026-06-30,12:00,Ivory Coast,Norway,AT&T Stadium,Arlington,United States,TRUE
+77,2026-06-30,17:00,France,Sweden,MetLife Stadium,East Rutherford,United States,TRUE
+79,2026-06-30,19:00,Mexico,Ecuador,Estadio Azteca,Mexico City,Mexico,FALSE
+80,2026-07-01,12:00,England,DR Congo,Mercedes-Benz Stadium,Atlanta,United States,TRUE
+82,2026-07-01,13:00,Belgium,Senegal,Lumen Field,Seattle,United States,TRUE
 81,2026-07-01,17:00,United States,Bosnia and Herzegovina,Levi's Stadium,Santa Clara,United States,FALSE
+84,2026-07-02,12:00,Spain,Austria,SoFi Stadium,Inglewood,United States,TRUE
+83,2026-07-02,19:00,Portugal,Croatia,BMO Field,Toronto,Canada,TRUE
+85,2026-07-02,20:00,Switzerland,Algeria,BC Place,Vancouver,Canada,TRUE
+88,2026-07-03,13:00,Australia,Egypt,AT&T Stadium,Arlington,United States,TRUE
+86,2026-07-03,18:00,Argentina,Cape Verde,Hard Rock Stadium,Miami Gardens,United States,TRUE
+87,2026-07-03,20:30,Colombia,Ghana,Arrowhead Stadium,Kansas City,United States,TRUE
 ```
 
 Source trail:
 
-- The Round of 32 bracket confirms Match 73 South Africa vs Canada, Match 75 Netherlands vs Morocco, Match 76 Brazil vs Japan, and Match 81 United States vs Bosnia and Herzegovina.
-- The match schedule gives the exact date, local time, and venue for those match numbers.
-- The schedule references FIFA match reports for those four confirmed matches.
+- The FIFA knockout-stage schedule defines match numbers, dates, local times, and venues.
+- CBS Sports published the full confirmed Round of 32 bracket after group-stage completion.
+- Sports Illustrated and Al Jazeera were used as cross-checks for fixture dates, times, and venues.
 
-## Generating Known-Fixture Output
+## Generating Round Output
 
 Run from the repository root:
 
 ```bash
 tabpfn-football-predictions/.venv/bin/python scripts/predict_custom_fixtures.py \
-  data/processed/round_of_32_known_fixtures.csv \
-  outputs/round_of_32_known_fixtures_submission_20260626.csv
+  data/processed/round_of_32_fixtures.csv \
+  outputs/round_of_32_submission.csv
 ```
 
 Generated upload file:
 
 ```text
-outputs/round_of_32_known_fixtures_submission_20260626.csv
+outputs/round_of_32_submission.csv
 ```
 
 ## Validation Checklist
