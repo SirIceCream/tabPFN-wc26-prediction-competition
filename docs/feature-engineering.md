@@ -137,3 +137,52 @@ Use chronological validation where possible. If historical odds are not availabl
 ## Current Recommendation
 
 Implement betting odds first as a post-model blending layer, not as TabPFN training features. That gives us a distinct output while keeping the current baseline stable.
+
+## Implemented Adjustment Layer
+
+The repo now has a deterministic post-model adjustment script:
+
+```text
+scripts/adjust_probabilities.py
+```
+
+Inputs:
+
+```text
+outputs/round_of_32_submission.csv
+data/processed/round_of_32_fixtures.csv
+data/processed/round_of_32_team_context.csv
+data/processed/round_of_32_market_odds_template.csv
+```
+
+The team-context file supports:
+
+- `confederation`
+- `is_host`
+- `group_points`
+- `group_goal_diff`
+- `prior_run_score`
+
+The market-odds file supports multiple providers per match and converts decimal odds to normalized implied probabilities before blending.
+
+Example run:
+
+```bash
+tabpfn-football-predictions/.venv/bin/python scripts/adjust_probabilities.py \
+  outputs/round_of_32_submission.csv \
+  data/processed/round_of_32_fixtures.csv \
+  data/processed/round_of_32_team_context.csv \
+  outputs/round_of_32_adjusted_submission.csv \
+  --market-odds-csv data/processed/round_of_32_market_odds_template.csv
+```
+
+The adjustment layer currently applies:
+
+- group-points edge
+- group-goal-difference edge
+- prior tournament run edge
+- explicit host edge for United States, Mexico, and Canada when playing in their own country
+- small cross-confederation uncertainty shrink toward `1/3, 1/3, 1/3`
+- optional market blend
+
+The uncertainty factor is deliberately symmetric. It does not randomly push toward either team; it slightly reduces overconfidence in cross-confederation matchups.
